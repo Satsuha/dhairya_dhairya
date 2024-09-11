@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Review</title>
+    <link rel="stylesheet" href="safety.css"> <!-- Linking to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Safety Review</h1>
+        </header>
+        <main>
+            <form id="safetyForm">
+                <label for="placeInput">Enter Location:</label>
+                <input type="text" id="placeInput" name="place" required>
+                <button type="submit" id="checkSafetyBtn">Check Safety</button>
+            </form>
+
+            <form id="submitScoreForm">
+                <label for="userScoreInput">Submit Your Safety Score:</label>
+                <input type="number" id="userScoreInput" name="userScore" min="1" max="100" required>
+                <button type="submit" id="submitScoreBtn">Submit Score</button>
+            </form>
+
+            <div id="result">
+                <p id="safetyScore">Safety Score: N/A</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="safety.js"></script> <!-- Linking to the JavaScript file -->
+</body>
+</html>

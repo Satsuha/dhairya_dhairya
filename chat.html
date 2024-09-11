@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Guardian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light grey background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            background-color: #e24e51;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+        }
+
+        .chat-header {
+            background-color: #00796b;
+            color: #d3afd1;
+            padding: 15px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-size: 20px;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #641043;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            width: fit-content;
+            max-width: 70%;
+        }
+
+        .message.person-x {
+            background-color: #c329d4;
+            align-self: flex-start;
+        }
+
+        .message.guardian {
+            background-color: #09ff88;
+            align-self: flex-end;
+        }
+
+        .chat-input {
+            display: flex;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-top: 1px solid #33162e;
+            border-bottom-left-radius: 10px;
+        }
+
+        .chat-input button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #00796b;
+            color: #46062b;
+            border: none;
+            border-top: 1px solid #98168b;
+            border-bottom-right-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background-color: #4d0031;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            Chat with Guardian
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message person-x">
+                Hello! I’m heading out to the mall now.
+            </div>
+            <div class="message guardian">
+                Hi, Abc! Please keep me updated and stay safe.
+            </div>
+            <!-- More chat messages will be added here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button id="sendMessageBtn">Send</button>
+        </div>
+    </div>
+</body>
+</html>

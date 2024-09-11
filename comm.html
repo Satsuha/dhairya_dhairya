@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Light pink background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            max-width: 90%;
+            padding: 20px;
+        }
+
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .post-header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .post-header .username {
+            font-weight: bold;
+            color: #d81b60; /* Pink color for usernames */
+        }
+
+        .post-content {
+            margin-bottom: 10px;
+        }
+
+        .post-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .post-actions button {
+            background-color: #d81b60; /* Pink background */
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .post-actions button:hover {
+            background-color: #c2185b; /* Darker pink on hover */
+        }
+
+        .comments {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .comment {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .comment-input {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .comment-input input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .comment-input button {
+            background-color: #d81b60; /* Pink background */
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-input button:hover {
+            background-color: #c2185b; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="post">
+            <div class="post-header">
+                <img src="street baby cat.jpg" alt="Profile Picture">
+                <span class="username">Chitra Swamy</span>
+            </div>
+            <div class="post-content">
+                <p>I had a terrifying experience tonight. While walking home on street no 8,chikkadpally , I was followed by someone who seemed to be lurking in the shadows. I could hear footsteps behind me, and when I turned around, I saw a figure running away.He followed me till my home.Had to call the police. Please be extra cautious if you're in this area.</p>
+                <img src="seas.jpg" alt="Incident Image">
+            </div>
+            <div class="post-actions">
+                <button onclick="likePost()">Like</button>
+                <button onclick="sharePost()">Share</button>
+                <button onclick="toggleComments()">Show Comments</button>
+            </div>
+            <div class="comments" id="commentsSection">
+                <div class="comment">
+                    <strong>Emily Smith:</strong> That sounds really scary. Glad you're okay. Thanks for the warning!
+                </div>
+                <div class="comment">
+                    <strong>Mark Johnson:</strong> Wow, that’s frightening. I’ll definitely avoid that street after dark.
+                </div>
+                <div class="comment">
+                    <strong>Anna Lee:</strong> I’m so sorry you had to go through this. Have you reported it to the police?
+                </div>
+                <div class="comment">
+                    <strong>Michael Brown:</strong> Stay safe out there. Maybe consider carrying some pepper spray or a personal alarm.
+                </div>
+            </div>
+            <div class="comment-input">
+                <input type="text" id="commentInput" placeholder="Add a comment...">
+                <button onclick="addComment()">Post</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function likePost() {
+            alert('Post liked!');
+        }
+
+        function sharePost() {
+            alert('Post shared!');
+        }
+
+        function toggleComments() {
+            const commentsSection = document.getElementById('commentsSection');
+            if (commentsSection.style.display === 'none' || commentsSection.style.display === '') {
+                commentsSection.style.display = 'block';
+                document.querySelector('.post-actions button:nth-child(3)').textContent = 'Hide Comments';
+            } else {
+                commentsSection.style.display = 'none';
+                document.querySelector('.post-actions button:nth-child(3)').textContent = 'Show Comments';
+            }
+        }
+
+        function addComment() {
+            const commentInput = document.getElementById('commentInput');
+            const commentText = commentInput.value.trim();
+            if (commentText) {
+                const commentsSection = document.getElementById('commentsSection');
+                const newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.innerHTML = `<strong>New Commenter:</strong> ${commentText}`;
+                commentsSection.appendChild(newComment);
+                commentInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
